@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Other gems used by the project
 gem 'will_paginate'
-gem 'simple_form'
+# gem 'simple_form'
 gem 'validates_timeliness'
 
 group :development, :test do
