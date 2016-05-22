@@ -8,6 +8,16 @@ class UserOrganizationTest < ActiveSupport::TestCase
   # test validations
   should validate_presence_of(:organization)
   should validate_presence_of(:user)
+  should validate_presence_of(:org_role)
+
+  should allow_value("Member").for(:org_role)
+  should allow_value("Admin").for(:org_role)
+  should_not allow_value("Grand Puba").for(:org_role)
+  should_not allow_value("Bob").for(:org_role)
+  should_not allow_value("Kevin").for(:org_role)
+  should_not allow_value("Minion").for(:org_role)
+  should_not allow_value("Sith Lord").for(:org_role)
+
   should validate_numericality_of(:organization)
   should validate_numericality_of(:user)
   should_not allow_value(-1).for(:organization)
