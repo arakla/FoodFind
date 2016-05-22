@@ -274,6 +274,3 @@ DEPENDENCIES
   web-console (~> 2.0)
   will_paginate
   wirble
-
-BUNDLED WITH
-   1.12.4

@@ -43,7 +43,24 @@ class UserTest < ActiveSupport::TestCase
 
   should_not allow_value(5).for(:loyalty_status)
   should_not allow_value(4.5).for(:loyalty_status)
-  
+
+  should allow_value(DateTime.now).for(:last_login)
+  should allow_value(DateTime.new(2015,12,12)).for(:last_login)
+  should allow_value(DateTime.new(2016,5,5)).for(:last_login)
+
+  should_not allow_value(DateTime.new(2020,6,6)).for(:last_login)
+  should_not allow_value("noon").for(:last_login)
+  should_not allow_value("New Years").for(:last_login)
+
+  should allow_value(0).for(:login_count)
+  should allow_value(15).for(:login_count)
+
+  should_not allow_value("three times").for(:login_count)
+  should_not allow_value(false).for(:login_count)
+
+  should allow_value("admin").for(:role)
+  should_not allow_value(3).for(:role)
+
   def user
     @user ||= User.new
   end
