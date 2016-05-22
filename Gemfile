@@ -33,9 +33,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Other gems used by the project
+
+# Use a gem for handling pagination
 gem 'will_paginate'
-# gem 'simple_form'
+# Getting back the respond_to functionality
+gem 'responders', '~> 2.0'
+
+gem 'simple_form'
 gem 'validates_timeliness'
+gem 'bootstrap-generators', '~> 3.3.4'
+gem 'omniauth-facebook', '~> 3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,10 +50,14 @@ group :development, :test do
 
   gem 'shoulda'
   gem 'shoulda-matchers'
+  gem 'minitest'
+  gem 'minitest-rails'
+  gem 'minitest-reporters'
+  gem 'minitest-perf'
   gem 'factory_girl_rails'
-  gem 'mocha', require: false
+  gem 'mocha'
+  gem 'nokogiri'
   gem 'simplecov'
-  gem 'turn'
   gem 'single_test'
 end
 
@@ -64,6 +75,7 @@ group :development do
   gem 'meta_request'
   gem 'wirble'
   gem 'hirb'
+  gem 'populator3'
   gem 'faker'
 end
 

@@ -1,47 +1,47 @@
-require 'test_helper'
+require "test_helper"
 
 class UsersControllerTest < ActionController::TestCase
-  setup do
-    @user = users(:one)
+  def user
+    @user ||= users :one
   end
 
-  test "should get index" do
+  def test_index
     get :index
     assert_response :success
     assert_not_nil assigns(:users)
   end
 
-  test "should get new" do
+  def test_new
     get :new
     assert_response :success
   end
 
-  test "should create user" do
-    assert_difference('User.count') do
-      post :create, user: { date_of_birth: @user.date_of_birth, email: @user.email, first_name: @user.first_name, last_name: @user.last_name, loyalty_status: @user.loyalty_status }
+  def test_create
+    assert_difference("User.count") do
+      post :create, user: { date_of_birth: user.date_of_birth, email: user.email, first_name: user.first_name, last_login: user.last_login, last_name: user.last_name, login_count: user.login_count, loyalty_status: user.loyalty_status, role: user.role }
     end
 
     assert_redirected_to user_path(assigns(:user))
   end
 
-  test "should show user" do
-    get :show, id: @user
+  def test_show
+    get :show, id: user
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, id: @user
+  def test_edit
+    get :edit, id: user
     assert_response :success
   end
 
-  test "should update user" do
-    patch :update, id: @user, user: { date_of_birth: @user.date_of_birth, email: @user.email, first_name: @user.first_name, last_name: @user.last_name, loyalty_status: @user.loyalty_status }
+  def test_update
+    put :update, id: user, user: { date_of_birth: user.date_of_birth, email: user.email, first_name: user.first_name, last_login: user.last_login, last_name: user.last_name, login_count: user.login_count, loyalty_status: user.loyalty_status, role: user.role }
     assert_redirected_to user_path(assigns(:user))
   end
 
-  test "should destroy user" do
-    assert_difference('User.count', -1) do
-      delete :destroy, id: @user
+  def test_destroy
+    assert_difference("User.count", -1) do
+      delete :destroy, id: user
     end
 
     assert_redirected_to users_path

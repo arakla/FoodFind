@@ -1,29 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to users_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_user_path(@user), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show user</h1>
+</div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+<dl class="dl-horizontal">
+  <dt>First name:</dt>
+  <dd><%= @user.first_name %></dd>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+  <dt>Last name:</dt>
+  <dd><%= @user.last_name %></dd>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <dt>Email:</dt>
+  <dd><%= @user.email %></dd>
 
-<p>
-  <strong>Date of birth:</strong>
-  <%= @user.date_of_birth %>
-</p>
+  <dt>Date of birth:</dt>
+  <dd><%= @user.date_of_birth %></dd>
 
-<p>
-  <strong>Loyalty status:</strong>
-  <%= @user.loyalty_status %>
-</p>
+  <dt>Loyalty status:</dt>
+  <dd><%= @user.loyalty_status %></dd>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <dt>Last login:</dt>
+  <dd><%= @user.last_login %></dd>
+
+  <dt>Login count:</dt>
+  <dd><%= @user.login_count %></dd>
+
+  <dt>Role:</dt>
+  <dd><%= @user.role %></dd>
+
+</dl>

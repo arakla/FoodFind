@@ -1,34 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to events_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_event_path(@event), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show event</h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @event.name %></dd>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @event.latitude %>
-</p>
+  <dt>Image path:</dt>
+  <dd><%= @event.image_path %></dd>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @event.longitude %>
-</p>
+  <dt>Description:</dt>
+  <dd><%= @event.description %></dd>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+  <dt>Age restriction:</dt>
+  <dd><%= @event.age_restriction %></dd>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @event.start_time %>
-</p>
+  <dt>Description:</dt>
+  <dd><%= @event.description %></dd>
 
-<p>
-  <strong>End time:</strong>
-  <%= @event.end_time %>
-</p>
+  <dt>Start time:</dt>
+  <dd><%= @event.start_time %></dd>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+  <dt>End time:</dt>
+  <dd><%= @event.end_time %></dd>
+
+  <dt>Location:</dt>
+  <dd><%= @event.location %></dd>
+
+</dl>
