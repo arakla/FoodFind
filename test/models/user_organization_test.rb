@@ -22,9 +22,7 @@ class UserOrganizationTest < ActiveSupport::TestCase
   should validate_numericality_of(:user)
   should_not allow_value(-1).for(:organization)
   should_not allow_value(7.7).for(:organization)
-  should_not allow_value(0).for(:organization)
   should_not allow_value(-1).for(:user)
-  should_not allow_value(0).for(:user)
   should_not allow_value(7.7).for(:user)
   
   def user_organization
