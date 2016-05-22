@@ -18,3 +18,6 @@
 
 # Ignore the schema file, regenerate with rake db:migrate
 /db/schema.rb
+
+# Ignore the coverage directory, regenerate with rake test:units
+/coverage
