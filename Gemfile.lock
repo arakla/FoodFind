@@ -97,7 +97,7 @@ GEM
       rack-contrib (~> 1.1)
       railties (>= 3.0.0, < 5.1.0)
     metaclass (0.0.4)
-    mime-types (3.0)
+    mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.0.0)
@@ -274,3 +274,6 @@ DEPENDENCIES
   web-console (~> 2.0)
   will_paginate
   wirble
+
+BUNDLED WITH
+   1.12.4
