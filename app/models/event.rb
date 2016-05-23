@@ -17,6 +17,8 @@ class Event < ActiveRecord::Base
   # Scopes
   scope :chronological, -> { order(start_datetime: :desc) }
   scope :by_location,  -> { order(:location) }
-  scope :for_location,  ->(location_id) { where(location_id: location_id) }
-  
+  scope :for_location,  -> (location_id) { where(location_id: location_id) }
+  scope :upcoming, -> { where("end_time >= ? ", DateTime.now) }
+  scope :current, -> { where(" ? BETWEEN start_time AND end_time", DateTime.now) }
+
 end
