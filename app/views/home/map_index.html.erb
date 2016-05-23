@@ -1,0 +1,13 @@
+<div id="map_canvas"></div>
+<script>
+  var map;
+  function initMap() {
+    console.log("Loading map");
+    map = new google.maps.Map(document.getElementById('map_canvas'), {
+      center: {lat: 40.443, lng: -79.9435},
+      zoom: 17
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMOiRIvvh1MmUZGchc5wJZEY68gjnKtwY&callback=initMap"
+async defer></script>
