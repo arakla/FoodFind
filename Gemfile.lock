@@ -134,6 +134,7 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    pg (0.18.4)
     populator3 (0.2.7)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
@@ -254,6 +255,7 @@ DEPENDENCIES
   mocha
   nokogiri
   omniauth-facebook (~> 3.0)
+  pg
   populator3
   quiet_assets
   rails (= 4.2.6)
@@ -266,7 +268,6 @@ DEPENDENCIES
   simplecov
   single_test
   spring
-  sqlite3
   thin
   turbolinks
   uglifier (>= 1.3.0)
