@@ -46,6 +46,7 @@ gem 'simple_form'
 gem 'validates_timeliness'
 gem 'bootstrap-generators', '~> 3.3.4'
 gem 'omniauth-facebook', '~> 3.0'
+gem 'pg_search'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
