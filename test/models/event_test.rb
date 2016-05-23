@@ -8,7 +8,7 @@ class EventTest < ActiveSupport::TestCase
   should have_many(:organizations).through(:event_organizations)
   should have_many(:event_tags)
   should have_many(:tags).through(:event_tags)
-  should belong_to(:events)
+  should belong_to(:location)
 
   # test validations
   should validate_presence_of(:name)
@@ -19,7 +19,6 @@ class EventTest < ActiveSupport::TestCase
   should validate_presence_of(:location)
   should validate_numericality_of(:location)
   should_not allow_value(-1).for(:location)
-  should_not allow_value(0).for(:location)
   should_not allow_value(50.50).for(:location)
 
   should allow_value(Date.today).for(:start_time)
