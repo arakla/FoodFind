@@ -10,4 +10,8 @@ class NullLocation
   def longitude
   	"Unknown"
   end
+
+  def events
+  	[NullEvent.new]
+  end
 end

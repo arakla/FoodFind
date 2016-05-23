@@ -17,7 +17,7 @@ class NullEvent
   end
 
   def age_restriction
-    "Unknown age restriction"
+    "No age restriction"
   end
 
   def start_datetime
