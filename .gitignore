@@ -18,3 +18,9 @@
 
 # Ignore the schema file, regenerate with rake db:migrate
 /db/schema.rb
+
+# Ignore the minitest performance db, regenerate with rake test:units
+/.minitest-perf.db
+
+# Ignore the coverage directory, regenerate with rake test:units
+/coverage

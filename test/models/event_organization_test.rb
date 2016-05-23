@@ -11,10 +11,8 @@ class EventOrganizationTest < ActiveSupport::TestCase
   should validate_numericality_of(:event)
   should validate_numericality_of(:organization)
   should_not allow_value(-1).for(:event)
-  should_not allow_value(0).for(:event)
   should_not allow_value(50.50).for(:event)
   should_not allow_value(-1).for(:organization)
-  should_not allow_value(0).for(:organization)
   should_not allow_value(50.50).for(:organization)
   
   def event_organization
