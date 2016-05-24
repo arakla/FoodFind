@@ -17,7 +17,7 @@ class UserEventTest < ActiveSupport::TestCase
   should_not allow_value(7.7).for(:event)
   should_not allow_value(-1).for(:user)
   should_not allow_value(7.7).for(:user)
-  
+
   should validate_numericality_of(:rating)
   should allow_value(0).for(:rating)
   should allow_value(5).for(:rating)

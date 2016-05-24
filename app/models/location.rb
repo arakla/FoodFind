@@ -2,7 +2,7 @@ class Location < ActiveRecord::Base
   # Search
   include PgSearch
   pg_search_scope :search_by_name, :against => :name, :using => [:dmetaphone, :trigram]
-	
+
   def self.search(term)
     where('LOWER(name) LIKE ?', "%#{term.downcase}%")
   end

@@ -35,7 +35,7 @@ class EventTest < ActiveSupport::TestCase
   should_not allow_value(2).for(:end_time)
   should_not allow_value(3.14159).for(:end_time)
 
-  
+
   def event
     @event ||= Event.new
   end
