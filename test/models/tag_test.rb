@@ -23,7 +23,7 @@ class TagTest < ActiveSupport::TestCase
   should_not allow_value("bad").for(:count)
   should_not allow_value(3.14159).for(:count)
   should_not allow_value(-3.14159).for(:count)
-  
+
   def tag
     @tag ||= Tag.new
   end

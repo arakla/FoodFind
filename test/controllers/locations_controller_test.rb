@@ -18,7 +18,7 @@ class LocationsControllerTest < ActionController::TestCase
 
   def test_create
     assert_difference("Location.count") do
-      post :create, location: { latitude: location.latitude, longitude: location.longitude, name: location.name }
+      post :create, location: { active: location.active, latitude: location.latitude, longitude: location.longitude, name: location.name }
     end
 
     assert_redirected_to location_path(assigns(:location))
@@ -35,7 +35,7 @@ class LocationsControllerTest < ActionController::TestCase
   end
 
   def test_update
-    put :update, id: location, location: { latitude: location.latitude, longitude: location.longitude, name: location.name }
+    put :update, id: location, location: { active: location.active, latitude: location.latitude, longitude: location.longitude, name: location.name }
     assert_redirected_to location_path(assigns(:location))
   end
 
