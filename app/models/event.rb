@@ -11,6 +11,8 @@ class Event < ActiveRecord::Base
   # Validations
   validates_presence_of :name, :location, :start_time, :end_time
   validates_numericality_of :location, only_integer: true
+  validates_datetime :start_time
+  validates_datetime :end_time, :on_or_after => lambda { :start_time }
 
   # Scopes
   scope :chronological, -> { order(start_datetime: :desc) }
