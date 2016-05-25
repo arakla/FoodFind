@@ -11,7 +11,7 @@ FactoryGirl.define do
 
   factory :location do
     name "Carnegie Mellon University"
-    longitude "-79.94199200000003"
-    latitude "40.4438782"
+    latitude 40.4438782
+    longitude -79.94199200000003
   end
 end
