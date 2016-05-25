@@ -9,10 +9,8 @@ class Event < ActiveRecord::Base
   has_many :organizations, through: :event_organizations
 
   # Validations
-  validates_presence_of :name, on: :create
-  validates_presence_of :location, on: :create
-  validates_presence_of :start_time, on: :create
-  validates_presence_of :end_time, on: :create
+  validates_presence_of :name, :location, :start_time, :end_time
+  validates_numericality_of :location, only_integer: true
 
   # Scopes
   scope :chronological, -> { order(start_datetime: :desc) }
