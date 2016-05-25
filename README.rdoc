@@ -1,28 +1,16 @@
-== README
+== FoodFind
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Through FoodFind, users within the CMU community will be able to find and advertise events with free food through a mobile app. The events shown can be personalized based on their personal preferences saved in their profiles. Additionally, the user can checkin to events to earn reward points and let the host know they were present.
 
-Things you may want to cover:
+Important Notes:
 
-* Ruby version
+* Ruby version - 2.3.x
 
-* System dependencies
+* System dependencies - PostgreSQL 9.3.x or higher
 
-* Configuration
+* To rebuild from scratch: https://docs.google.com/document/d/1Gzh5s7C_nC5J5W-ZCQB8ynANk4evfsIoOvGegjD3fmw/edit
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Developed by a CMU Information Systems team for 67-475/495 (Summer 2016):
+* Arun Marsten
+* Eric Terui
+* Aamer Rakla

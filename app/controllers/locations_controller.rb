@@ -5,6 +5,11 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    if @locations.empty?
+      @locations = [NullLocation.new]
+    else
+      @locations #= Location.alphabetical.paginate(:page => params[:page], :per_page => 10)
+    end
   end
 
   # GET /locations/1
@@ -69,6 +74,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:name, :latitude, :longitude)
+      params.require(:location).permit(:name, :latitude, :longitude, :active)
     end
 end
