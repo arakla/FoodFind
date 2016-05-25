@@ -5,6 +5,11 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    if @events.empty?
+      @events = [NullEvent.new]
+    else
+      @events = Event.all
+    end
   end
 
   # GET /events/1

@@ -14,7 +14,7 @@ class EventOrganizationTest < ActiveSupport::TestCase
   should_not allow_value(50.50).for(:event)
   should_not allow_value(-1).for(:organization)
   should_not allow_value(50.50).for(:organization)
-  
+
   def event_organization
     @event_organization ||= EventOrganization.new
   end

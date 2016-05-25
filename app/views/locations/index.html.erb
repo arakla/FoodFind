@@ -13,6 +13,7 @@
             <th>Name</th>
             <th>Latitude</th>
             <th>Longitude</th>
+            <th>Active</th>
             <th></th>
         <th></th>
         <th></th>
@@ -24,6 +25,7 @@
             <td><%= location.name %></td>
             <td><%= location.latitude %></td>
             <td><%= location.longitude %></td>
+            <td><%= location.active %></td>
             <td><%= link_to 'Show', location %></td>
         <td><%= link_to 'Edit', edit_location_path(location) %></td>
         <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
