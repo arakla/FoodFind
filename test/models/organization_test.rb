@@ -28,7 +28,7 @@ class OrganizationTest < ActiveSupport::TestCase
   should_not allow_value("bad").for(:active)
   should_not allow_value(-20).for(:active)
   should_not allow_value(3.14159).for(:active)
-  should_not allow_value("1:00").for(:active) 
+  should_not allow_value("1:00").for(:active)
 
   def organization
     @organization ||= Organization.new
