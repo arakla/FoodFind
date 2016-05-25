@@ -1,6 +1,27 @@
+<% @locations.each do |location| %>
+  <div class="modal fade" id="<%=location.name%>" tabindex="-1" role="dialog" aria-labelledby="eventModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="eventModal">Events</h4>
+        </div>
+        <div class="modal-body">
+          <% location.events.each do |event| %>
+            <p><%= link_to event.name, event_path(event) %><p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 <div id="map_canvas"></div>
 <script>
   var map;
+  var events = <%= raw @events.to_json %>;
+  var locations = <%= raw @locations.to_json %>;
+  console.log(locations);
+  console.log(events);
   function initMap() {
     map = new google.maps.Map(document.getElementById('map_canvas'), {
       center: {lat: 40.443, lng: -79.9435},
@@ -8,12 +29,22 @@
       disableDefaultUI: true
     });
 
-    var marker = new google.maps.Marker({
-      position: {lat: 40.441802, lng: -79.946229},
-      label: "3",
-      map: map
-    });
+    locations.forEach(function(location) {
+      var event_count  = events.filter( function(element) {
+        return element.location_id == location.id}).length.toString();
+
+      var marker = new google.maps.Marker({
+        position: {lat: location.latitude, lng: location.longitude},
+        label: event_count,
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', function() {
+      $('#' + location.name).modal('show');
+    })
+
+});
+
   }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMOiRIvvh1MmUZGchc5wJZEY68gjnKtwY&callback=initMap"
-async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMOiRIvvh1MmUZGchc5wJZEY68gjnKtwY&callback=initMap"></script>
