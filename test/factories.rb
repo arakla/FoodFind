@@ -13,4 +13,5 @@ FactoryGirl.define do
     name "Carnegie Mellon University"
     longitude "-79.94199200000003"
     latitude "40.4438782"
+  end
 end
