@@ -13,15 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
- #map_canvas_container {
-   position: relative;
- }
-
- #map_canvas {
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
- }
